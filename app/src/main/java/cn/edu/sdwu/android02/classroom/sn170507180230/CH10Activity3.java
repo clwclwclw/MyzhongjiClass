@@ -24,7 +24,7 @@ public class CH10Activity3 extends AppCompatActivity {
         setResult(RESULT_OK,intent);//设置返回值
         finish();
     }
-    public void  Cancel(View view){
+    public void  cancel(View view){
         setResult(RESULT_CANCELED);
         finish();//关闭当前界面
     }

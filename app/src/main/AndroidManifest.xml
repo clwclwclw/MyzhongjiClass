@@ -10,7 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".CH10Activity1"></activity>
+        <activity android:name=".CH10Activity1">
+            <intent-filter>
+                <action android:name="com.inspur.action2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="inspur.name"
+                    android:scheme="abc" />
+            </intent-filter>
+        </activity>
         <activity android:name=".CH10Activity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +38,19 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".CH10Activity3"></activity>
+        <activity android:name=".CH10Activity3" />
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".CH12Activity1" />
+
+        <service
+            android:name=".MyService2"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

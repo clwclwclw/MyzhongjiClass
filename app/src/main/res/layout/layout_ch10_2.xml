@@ -23,4 +23,34 @@
         android:text="start_sub_activity"
         android:onClick="startSubActivity"
         android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:text="web"
+        android:onClick="web"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:text="contactsDetail"
+        android:onClick="contactsDetail"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:text="contactsList"
+        android:onClick="contactsList"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:text="showMap"
+        android:onClick="showMap"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:text="Pick_Contact"
+        android:onClick="pickContact"
+        android:layout_height="wrap_content" />
+  <Button
+      android:layout_width="wrap_content"
+      android:text="implictStart"
+      android:onClick="implictStart"
+      android:layout_height="wrap_content" />
 </LinearLayout>

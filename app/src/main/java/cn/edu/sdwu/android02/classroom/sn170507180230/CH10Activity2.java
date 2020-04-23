@@ -1,6 +1,7 @@
 package cn.edu.sdwu.android02.classroom.sn170507180230;
 
 import android.net.Uri;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,18 +40,60 @@ public class CH10Activity2 extends AppCompatActivity {
 
     }
 
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         //3.在父Activity中获取返回值
         //requestCode用来区分从哪一个子activity返回的结果
-        if(requestCode==RESULT_OK){
-            String name=data.getStringExtra("name");
-            Toast.makeText(this,name,Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(this,"cancel",Toast.LENGTH_SHORT).show();
+        if (requestCode == 101) {
+            if (requestCode == RESULT_OK) {
+                String name = data.getStringExtra("name");
+                Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "cancel", Toast.LENGTH_SHORT).show();
+            }
+        }else if(requestCode==102){
+            if (requestCode == RESULT_OK) {
+                String content = data.getStringExtra("name");
+                Toast.makeText(this, content, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "cancel", Toast.LENGTH_SHORT).show();
+            }
         }
     }
     public void web(View view){
         Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("http://baidu.com"));
+        startActivity(intent);
+    }
+    public void contactsList(View view){
+        Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("content://contacts/people/"));
+        startActivity(intent);
+    }
+    public void contactsDetail(View view){
+        //查看联系人明细
+        Intent intent=new Intent(Intent.ACTION_EDIT);
+        intent.setData(Uri.parse("content://contacts/people/1"));
+        startActivity(intent);
+    }
+    public void showMap(View view){
+        //打开地图
+        Intent intent=new Intent(Intent.ACTION_VIEW,Uri.parse("geo:50.123,7.1434"));
+        startActivity(intent);
+    }
+    public void showPhoto(View view){
+        //打开地图
+        Intent intent=new Intent(Intent.ACTION_VIEW,Uri.parse("geo:50.123,7.1434"));
+        startActivity(intent);
+    }
+    public void pickContact(View view){
+        //
+        Intent intent=new Intent(Intent.ACTION_PICK);//隐式启动
+        intent.setData(ContactsContract.Contacts.CONTENT_FILTER_URI);
+        startActivityForResult(intent,102);
+    }
+
+
+    public  void implictStart(View view){
+    Intent intent= new Intent("com.inspur.action2");
+        intent.setData(Uri.parse("abc://inspur.com"));
         startActivity(intent);
     }
 }
