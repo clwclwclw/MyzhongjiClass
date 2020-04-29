@@ -21,7 +21,7 @@
                     android:scheme="abc" />
             </intent-filter>
         </activity>
-        <activity android:name=".CH10Activity2"></activity>
+        <activity android:name=".CH10Activity2" />
 
         <receiver
             android:name=".MyReceiver"
@@ -50,9 +50,7 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".CH12Activity2">
-
-        </activity>
+        <activity android:name=".CH12Activity2"></activity>
         <activity android:name=".CH13Activity1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,6 +58,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CH14Activity1"></activity>
     </application>
 
 </manifest>
