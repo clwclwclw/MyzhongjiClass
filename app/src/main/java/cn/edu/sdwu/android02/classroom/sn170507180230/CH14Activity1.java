@@ -12,16 +12,17 @@ public class CH14Activity1 extends AppCompatActivity {
     private MyOpenHelper myOpenHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.layout_ch14_1);
 
-            myOpenHelper=new MyOpenHelper(this);
-            //以可写方式打开数据库(如果数据库不存在，自动创建数据库)
-            SQLiteDatabase sqLiteDatabase=myOpenHelper.getWritableDatabase();
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.layout_ch14_1);
 
-            //使用完毕，将数据库关闭
-            sqLiteDatabase.close();
-        }
+        myOpenHelper=new MyOpenHelper(this);
+        //以可写方式打开数据库(如果数据库不存在，自动创建数据库)
+        SQLiteDatabase sqLiteDatabase=myOpenHelper.getWritableDatabase();
+
+        //使用完毕，将数据库关闭
+        sqLiteDatabase.close();
+    }
 
     public  void insert(View view ){
         //以可写方式打开数据库(如果数据库不存在，自动创建数据库)
@@ -47,7 +48,7 @@ public class CH14Activity1 extends AppCompatActivity {
     public void query(View view){
         SQLiteDatabase sqLiteDatabase=myOpenHelper.getWritableDatabase();
         try{
-            Cursor cursor=sqLiteDatabase.rawQuery("select * from student where stuname=?",new String["Tom"]);//原生的SQL语句
+            Cursor cursor=sqLiteDatabase.rawQuery("select * from student where stuname=?",new String[Integer.parseInt("Tom")]);//原生的SQL语句
             while (cursor.moveToNext()){
                 int id=cursor.getInt(cursor.getColumnIndex("id"));
                 String stuname=cursor.getString(cursor.getColumnIndex("stuname"));

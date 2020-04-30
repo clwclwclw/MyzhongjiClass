@@ -1,5 +1,7 @@
 package cn.edu.sdwu.android02.classroom.sn170507180230;
 
+import android.content.ContentResolver;
+import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.util.Log;
 
 public class CH10Activity2 extends AppCompatActivity {
 
@@ -52,7 +55,14 @@ public class CH10Activity2 extends AppCompatActivity {
             }
         }else if(requestCode==102){
             if (requestCode == RESULT_OK) {
+
                 String content = data.getStringExtra("name");
+                Log.i(CH10Activity2.class.toString(),data.getData().toString());
+                ContentResolver contentResolver=this.getContentResolver();
+                Cursor cursor=contentResolver.query(data.getData(),null,null,null,null);
+                while(cursor.moveToNext()){
+
+                }
                 Toast.makeText(this, content, Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "cancel", Toast.LENGTH_SHORT).show();
