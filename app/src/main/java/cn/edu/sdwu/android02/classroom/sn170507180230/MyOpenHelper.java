@@ -10,10 +10,10 @@ import android.util.Log;
  */
 
 public class MyOpenHelper extends SQLiteOpenHelper {
-    private String STUDENT_TB_SQL="create table student(id integer primary key autoincrement,stuname text,stutel text)";
+    private String STUDENT_TB_SQL="create table student(id integer primary  key autoincrement,stuname text,stutel text)";
     public MyOpenHelper(Context context){
         //Context context上下文，String name数据库名称，CursorFactory factory传入NULL，int version 数据库的版本
-        super(context,"stud.db",null,2);
+        super(context,"stud.db",null,2);//建立一个学生的数据库stud.db
     }
 
     @Override

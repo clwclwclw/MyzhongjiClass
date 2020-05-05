@@ -23,7 +23,7 @@ public class CH10Activity2 extends AppCompatActivity {
     }
     public  void send_broadcast(View view){
         //发送广播
-        Intent intent=new Intent("com.inspur.broadcast");//制定频道
+        Intent intent=new Intent("com.inspur.broadcast");//指定频道
         intent.putExtra("key1","message");
 
         sendBroadcast(intent);//发送

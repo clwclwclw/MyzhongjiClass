@@ -82,7 +82,7 @@ public class CH14Activity1 extends AppCompatActivity {
             sqLiteDatabase.close();
         }
     }
-    public void edit(View view){
+    public void modify(View view){
         //以可写方式打开数据库(如果数据库不存在，自动创建数据库)
         SQLiteDatabase sqLiteDatabase=myOpenHelper.getWritableDatabase();
         try{
