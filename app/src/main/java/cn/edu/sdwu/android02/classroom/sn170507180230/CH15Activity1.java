@@ -11,7 +11,7 @@ import android.view.View;
 
 public class CH15Activity1 extends AppCompatActivity {
 private ContentResolver contentResolver;
-    private static final String CONTENT_URI_STRING="content://com.inspur.android02/student";
+    private static final String CONTENT_URI_STRING="content://com.inspur.android02/student";//com.inspur.android02:发布者，student是数据集
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
